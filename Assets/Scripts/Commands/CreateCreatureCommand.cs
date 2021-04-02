@@ -14,9 +14,9 @@ public class CreateCreatureCommand : Command {
     }
 
     public override void StartCommandExecution() {
-        GameObject newMob = GameObject.Instantiate(Resources.Load("Mob"), location, Quaternion.identity) as GameObject;
+        GameObject newMob = GameObject.Instantiate(Resources.Load("TamasPrefab/Mob"), location, Quaternion.identity) as GameObject;
         // put all mobs in petri dish
-        newMob.transform.parent = GameObject.Find("PetriDish").transform;
+        newMob.transform.parent = GameObject.Find("PetriDishSelf").transform;
         Mob mob = newMob.GetComponent<Mob>();
         mob.mobID = IDDispenser.RegisterObject(newMob);
         mob.info = breed.NewMobInfo();

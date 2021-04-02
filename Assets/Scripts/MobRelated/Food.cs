@@ -13,6 +13,7 @@ public class Food : MonoBehaviour {
     public Team team;
 
     public static FundManager fm = null;
+    public static LevelManager lm = null;
 
     private List<Mob> eaters;
 
@@ -23,6 +24,11 @@ public class Food : MonoBehaviour {
 
         if (fm == null) {
             fm = GameObject.Find("Canvas/TopBar/FundBackdrop/fundValue").GetComponent<FundManager>();
+        }
+
+        if(lm == null)
+        {
+            lm = GameObject.Find("Canvas/TopBar/LevelBackdrop/LevelNum").GetComponent<LevelManager>();
         }
 
         StartCoroutine(Cooldown());
@@ -49,6 +55,7 @@ public class Food : MonoBehaviour {
 
     void OnMouseEnter() {
         fm.Increase(healingValue);
+        lm.PlayerExpGrow(healingValue);
         Destroy(gameObject);
     }
 
@@ -63,4 +70,5 @@ public class Food : MonoBehaviour {
         eatable = true;
         yield return 0;
     }
+
 }

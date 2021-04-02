@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Loader : MonoBehaviour
 {
-    bool aoligei = false;
+    public bool InitTamaSpawn = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,10 @@ public class Loader : MonoBehaviour
                 Breed.breedCollection[br.breedID] = br;
             }
         }
-        
+
+        //此处照抄 load achievement
+        //Achievement.allAchievements
+
         // CollectionDetail(int _id, Sprite _icon, string _name, string _description)
         // new CollectionDetail(1, null, "Passed away", "A mob is beaten to death.");
         // new CollectionDetail(3, null, "Astronomia", "Ghana's dancing pallbearers.");
@@ -27,8 +30,8 @@ public class Loader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (aoligei == false) {
-            aoligei = true;
+        if (InitTamaSpawn == true) {
+            InitTamaSpawn = false;
             for (int i = 0; i < 10; i++)
             {
                 Vector3 location = new Vector3(Random.Range(-1.95f, 1.95f),

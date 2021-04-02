@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PopulationManager : MonoBehaviour {
     public int populationUpperBound;
@@ -17,6 +18,8 @@ public class PopulationManager : MonoBehaviour {
     private float nextTry;
     private Coroutine timer;
 
+    public TextMeshProUGUI currentTotalText;
+
     // Start is called before the first frame update
     void Start() {
         if (mobSpawnTimeIntervalMin > mobSpawnTimeIntervalMax) {
@@ -24,14 +27,22 @@ public class PopulationManager : MonoBehaviour {
         }
         nextTry = Random.Range(mobSpawnTimeIntervalMin, mobSpawnTimeIntervalMax);
         timer = StartCoroutine(Timer());
+        currentTotalText = GameObject.Find("Canvas/TopBar/GeneralInfoBackdrop/CurrentTotalPopulation").GetComponent<TextMeshProUGUI>();
     }
 
     public void RegisterObject(GameObject go) {
         currentPopulation += 1;
+        SetPopulationNumber();
     }
 
     public void UnregisterObject(GameObject go) {
         currentPopulation -= 1;
+        SetPopulationNumber();
+    }
+
+    public void SetPopulationNumber()
+    {
+        currentTotalText.SetText(currentPopulation.ToString());
     }
 
     IEnumerator Timer() {

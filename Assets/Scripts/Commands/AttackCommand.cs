@@ -17,7 +17,7 @@ public class AttackCommand : Command {
         GameObject attacker = IDDispenser.GetGameObjectWithID(attacker_id);
         GameObject target = IDDispenser.GetGameObjectWithID(target_id);
         if (attacker != null && target != null) {
-            GameObject bullet = GameObject.Instantiate(Resources.Load("Bullet"),
+            GameObject bullet = GameObject.Instantiate(Resources.Load("TamasPrefab/Bullet"),
                                                        attacker.transform.position,
                                                        attacker.transform.rotation) as GameObject;
             bullet.GetComponent<Bullet>().target = target;

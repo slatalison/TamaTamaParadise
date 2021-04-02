@@ -59,9 +59,10 @@ public class Mob : MonoBehaviour {
     IEnumerator ProduceFood(float foodPower) {
         while (true) {
             yield return new WaitForSeconds(60f / foodPower);
-            GameObject food = GameObject.Instantiate(Resources.Load("Food"),
+            GameObject food = GameObject.Instantiate(Resources.Load("TamasPrefab/Food"),
                                                      this.transform.position,
                                                      this.transform.rotation) as GameObject;
+            food.transform.parent = GameObject.Find("PetriDishSelf").transform;
             food.GetComponent<Food>().team = team;
         }
     }
