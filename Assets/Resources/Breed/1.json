@@ -1,53 +1,132 @@
 {
-    "breedName":"Breed_2",
-    "breedID":1,
-    "parentID":0,
-    "maxHp":10,
-    "atk":1,
-    "atkRadius":2.0,
-    "atkThreshold":60.0,
-    "attract":12,
-    "foodPower":60.0,
-    "zombies":0,
-    "tempFoodCurve":{
-        "serializedVersion":"2",
-        "m_Curve":[
-            {"serializedVersion":"3","time":0.0,"value":0.0,"inSlope":0.0,"outSlope":0.0,"tangentMode":0,"weightedMode":0,"inWeight":0.0,"outWeight":0.0},
-            {"serializedVersion":"3","time":50.0,"value":0.7992459535598755,"inSlope":-2.0929923057556154,"outSlope":-2.0929923057556154,"tangentMode":0,"weightedMode":0,"inWeight":0.3333333432674408,"outWeight":0.03458591178059578},
-            {"serializedVersion":"3","time":100.0,"value":100.0,"inSlope":2.0,"outSlope":2.0,"tangentMode":0,"weightedMode":0,"inWeight":0.0,"outWeight":0.0}
+    "breedName": "White Tama",
+    "breedID": 1,
+    "parentID": 0,
+    "maxHp": 10,
+    "atk": 2,
+    "atkRadius": 5.0,
+    "atkThreshold": 35.0,
+    "attract": 0,
+    "foodPower": 2.0,
+    "zombies": 0,
+    "tempFoodCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 1.016632080078125,
+                "value": 0.18125820159912109,
+                "inSlope": 0.049758024513721466,
+                "outSlope": 0.049758024513721466,
+                "tangentMode": 0,
+                "weightedMode": 0,
+                "inWeight": 0.0,
+                "outWeight": 0.23093146085739136
+            },
+            {
+                "serializedVersion": "3",
+                "time": 100.39718627929688,
+                "value": 2.0400352478027344,
+                "inSlope": 0.0086323367431759834,
+                "outSlope": 0.0086323367431759834,
+                "tangentMode": 0,
+                "weightedMode": 0,
+                "inWeight": 0.93229091167449951,
+                "outWeight": 0.0
+            }
         ],
-        "m_PreInfinity":2,
-        "m_PostInfinity":2,
-        "m_RotationOrder":4
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
     },
-    "presFoodCurve":{
-        "serializedVersion":"2",
-        "m_Curve":[
-            {"serializedVersion":"3","time":0.0,"value":0.0,"inSlope":0.022475171834230424,"outSlope":0.022475171834230424,"tangentMode":34,"weightedMode":0,"inWeight":0.0,"outWeight":0.3333333432674408},
-            {"serializedVersion":"3","time":80,"value":1.814586877822876,"inSlope":-0.00804230011999607,"outSlope":-0.00804230011999607,"tangentMode":34,"weightedMode":0,"inWeight":0.3333333432674408,"outWeight":0.3333333432674408},
-            {"serializedVersion":"3","time":100,"value":-30,"inSlope":-0.038559772074222568,"outSlope":-0.038559772074222568,"tangentMode":34,"weightedMode":0,"inWeight":0.3333333432674408,"outWeight":0.0}
+    "presFoodCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": -0.4590766429901123,
+                "value": 0.14717474579811096,
+                "inSlope": 0.0055337501689791679,
+                "outSlope": 0.0055337501689791679,
+                "tangentMode": 0,
+                "weightedMode": 0,
+                "inWeight": 0.0,
+                "outWeight": 0.46386420726776123
+            },
+            {
+                "serializedVersion": "3",
+                "time": 102.22452545166016,
+                "value": 1.0709738731384277,
+                "inSlope": 0.0095924930647015572,
+                "outSlope": 0.0095924930647015572,
+                "tangentMode": 0,
+                "weightedMode": 0,
+                "inWeight": 0.67027944326400757,
+                "outWeight": 0.0
+            }
         ],
-        "m_PreInfinity":2,
-        "m_PostInfinity":2,
-        "m_RotationOrder":4
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
     },
-    "tempAtkCurve":{
-        "serializedVersion":"2",
-        "m_Curve":[
-            {"serializedVersion":"3","time":0.0,"value":1.0,"inSlope":0.0,"outSlope":0.0,"tangentMode":34,"weightedMode":0,"inWeight":0.0,"outWeight":0.0},
-            {"serializedVersion":"3","time":100.0,"value":100.0,"inSlope":0.0,"outSlope":0.0,"tangentMode":34,"weightedMode":0,"inWeight":0.0,"outWeight":0.0}
+    "tempAtkCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0.400238037109375,
+                "value": 5.0836524963378906,
+                "inSlope": 0.0501725897192955,
+                "outSlope": 0.0501725897192955,
+                "tangentMode": 34,
+                "weightedMode": 0,
+                "inWeight": 0.0,
+                "outWeight": 0.3333333432674408
+            },
+            {
+                "serializedVersion": "3",
+                "time": 100.13265991210938,
+                "value": 10.087486267089844,
+                "inSlope": 0.0501725897192955,
+                "outSlope": 0.0501725897192955,
+                "tangentMode": 34,
+                "weightedMode": 0,
+                "inWeight": 0.3333333432674408,
+                "outWeight": 0.0
+            }
         ],
-        "m_PreInfinity":2,
-        "m_PostInfinity":2,
-        "m_RotationOrder":4
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
     },
-    "presAtkCurve":{
-        "serializedVersion":"2",
-        "m_Curve":[
-            {"serializedVersion":"3","time":0.0,"value":1.0,"inSlope":0.0,"outSlope":0.0,"tangentMode":34,"weightedMode":0,"inWeight":0.0,"outWeight":0.0},
-            {"serializedVersion":"3","time":100.0,"value":100.0,"inSlope":0.0,"outSlope":0.0,"tangentMode":34,"weightedMode":0,"inWeight":0.0,"outWeight":0.0}],
-        "m_PreInfinity":2,
-        "m_PostInfinity":2,
-        "m_RotationOrder":4
+    "presAtkCurve": {
+        "serializedVersion": "2",
+        "m_Curve": [
+            {
+                "serializedVersion": "3",
+                "time": 0.0349273681640625,
+                "value": 1.0072212219238281,
+                "inSlope": -0.009586152620613575,
+                "outSlope": -0.009586152620613575,
+                "tangentMode": 34,
+                "weightedMode": 0,
+                "inWeight": 0.0,
+                "outWeight": 0.3333333432674408
+            },
+            {
+                "serializedVersion": "3",
+                "time": 100.06069946289063,
+                "value": 0.048358917236328125,
+                "inSlope": -0.009586152620613575,
+                "outSlope": -0.009586152620613575,
+                "tangentMode": 34,
+                "weightedMode": 0,
+                "inWeight": 0.3333333432674408,
+                "outWeight": 0.0
+            }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
     }
 }

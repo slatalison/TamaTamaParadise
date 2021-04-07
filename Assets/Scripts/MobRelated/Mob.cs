@@ -10,6 +10,7 @@ public class Mob : MonoBehaviour {
     private Coroutine foodTimer;
     private bool dead;
     [SerializeField] private GameObject attacker;
+    private DragController dragController; 
 
     [SerializeField, SetProperty("team")]
     private Team _team;
@@ -54,6 +55,8 @@ public class Mob : MonoBehaviour {
 
         // for test perpose
         new MoveToCommand(mobID, new Vector3(Random.Range(-1.9f, 1.9f), Random.Range(-2.9f, 3.4f), 0), Random.Range(1.0f, 3.0f)).AddToQueue();
+
+        dragController = FindObjectOfType<DragController>();
     }
 
     IEnumerator ProduceFood(float foodPower) {
@@ -102,10 +105,16 @@ public class Mob : MonoBehaviour {
 
     private void Die() {
         // Debug.Log(gameObject.name + " has died.");
+
+        dragController._lastDragged = null;
+        Destroy(gameObject.GetComponent<Draggable>());
+        
+
         IDDispenser.UnregisterObject(mobID);
         ContainerEnv.tempPresChange -= EnvironmentChanged;
 
         gameObject.GetComponent<SpriteRenderer>().sprite = MobInfo.deadTexture;
+
 
         Collection.UnlockEvent(1);
 

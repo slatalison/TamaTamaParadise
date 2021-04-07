@@ -65,13 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Buffs\Buff.cs" />
-    <Compile Include="Assets\Scripts\Cards\ButtonClick.cs" />
     <Compile Include="Assets\Scripts\Cards\Button_UI.cs" />
     <Compile Include="Assets\Scripts\Cards\CardDetail.cs" />
     <Compile Include="Assets\Scripts\Cards\CardInventory.cs" />
     <Compile Include="Assets\Scripts\Cards\CardItem.cs" />
-    <Compile Include="Assets\Scripts\Cards\ContainerEnv.cs" />
-    <Compile Include="Assets\Scripts\Cards\PanelInteraction.cs" />
+    <Compile Include="Assets\Scripts\Cards\SwapCards.cs" />
     <Compile Include="Assets\Scripts\Cards\UI_CardInventory.cs" />
     <Compile Include="Assets\Scripts\Commands\AttackCommand.cs" />
     <Compile Include="Assets\Scripts\Commands\Command.cs" />
@@ -93,16 +91,27 @@
     <Compile Include="Assets\Scripts\MobRelated\KillFood.cs" />
     <Compile Include="Assets\Scripts\MobRelated\Mob.cs" />
     <Compile Include="Assets\Scripts\MobRelated\MobInfo.cs" />
+    <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerRelated\Achievement.cs" />
     <Compile Include="Assets\Scripts\PlayerRelated\Collection.cs" />
     <Compile Include="Assets\Scripts\PlayerRelated\FundManager.cs" />
     <Compile Include="Assets\Scripts\PlayerRelated\LevelManager.cs" />
     <Compile Include="Assets\Scripts\PopulationManager.cs" />
     <Compile Include="Assets\Scripts\SetPropertyAttribute.cs" />
+    <Compile Include="Assets\Scripts\UI&amp;Visual\ConfigApplyButton.cs" />
+    <Compile Include="Assets\Scripts\UI&amp;Visual\ConfigCardGroup.cs" />
+    <Compile Include="Assets\Scripts\UI&amp;Visual\ConfigItem.cs" />
+    <Compile Include="Assets\Scripts\UI&amp;Visual\ContainerEnv.cs" />
     <Compile Include="Assets\Scripts\UI&amp;Visual\DragController.cs" />
     <Compile Include="Assets\Scripts\UI&amp;Visual\Draggable.cs" />
     <Compile Include="Assets\Scripts\UI&amp;Visual\InvertedCircleCollider2D.cs" />
+    <Compile Include="Assets\Scripts\UI&amp;Visual\LoadingScenes.cs" />
     <Compile Include="Assets\Scripts\UI&amp;Visual\PDControl.cs" />
+    <Compile Include="Assets\Scripts\UI&amp;Visual\PanelInteraction.cs" />
+    <Compile Include="Assets\Scripts\UI&amp;Visual\TabGroup.cs" />
+    <Compile Include="Assets\Scripts\UI&amp;Visual\TabItem.cs" />
+    <Compile Include="Assets\Scripts\UI&amp;Visual\TamaCollectionCell.cs" />
+    <Compile Include="Assets\Scripts\UI&amp;Visual\UI_TamaPanel.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Scripts\DOTween\readme.txt" />

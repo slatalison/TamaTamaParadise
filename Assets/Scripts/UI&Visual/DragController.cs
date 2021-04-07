@@ -7,7 +7,7 @@ public class DragController : MonoBehaviour
     public bool _isDragActive = false;
     private Vector2 _screenPosition;
     private Vector3 _worldPosition;
-    private Draggable _lastDragged;
+    public Draggable _lastDragged;
     private Rigidbody2D rb;
     private Vector2 direction;
     [SerializeField] float speed = 0.02f;
@@ -68,13 +68,13 @@ public class DragController : MonoBehaviour
 
             if (hit.collider != null)
             {
-                Debug.Log("You find me");
+                //Debug.Log("You find me");
                 Draggable draggable = hit.transform.gameObject.GetComponent<Draggable>();
                 if (draggable != null)
                 {
                     _lastDragged = draggable;
                     InitDrag();
-                    Debug.Log("You drag me");
+                    //Debug.Log("You drag me");
                 }
             }
 
@@ -91,6 +91,8 @@ public class DragController : MonoBehaviour
         direction = new Vector2(_worldPosition.x, _worldPosition.y);
         rb = _lastDragged.transform.gameObject.GetComponent<Rigidbody2D>();
         rb.MovePosition((Vector2)_lastDragged.transform.position + (direction * speed * Time.deltaTime));
+        
+        
     }
 
     void Drop()

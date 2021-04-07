@@ -23,7 +23,7 @@ public class CreateCreatureCommand : Command {
         mob.team = team;
         newMob.name = mob.info.breed.breedName + "-" + mob.mobID;
 
-        ContainerEnv env = GameObject.Find("Canvas/EnvConfigPanel/ClipBinder").GetComponent<ContainerEnv>() as ContainerEnv;
+        ContainerEnv env = GameObject.Find("_GameCanvas/_Tabs/_ConfigTab").GetComponent<ContainerEnv>() as ContainerEnv;
         mob.EnvironmentChanged(env.CurrentTemp, env.CurrentPres);
 
         CommandExecutionComplete();

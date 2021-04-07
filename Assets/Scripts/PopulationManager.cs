@@ -18,7 +18,7 @@ public class PopulationManager : MonoBehaviour {
     private float nextTry;
     private Coroutine timer;
 
-    public TextMeshProUGUI currentTotalText;
+    [SerializeField] TextMeshProUGUI currentTotalText;
 
     // Start is called before the first frame update
     void Start() {
@@ -27,7 +27,6 @@ public class PopulationManager : MonoBehaviour {
         }
         nextTry = Random.Range(mobSpawnTimeIntervalMin, mobSpawnTimeIntervalMax);
         timer = StartCoroutine(Timer());
-        currentTotalText = GameObject.Find("Canvas/TopBar/GeneralInfoBackdrop/CurrentTotalPopulation").GetComponent<TextMeshProUGUI>();
     }
 
     public void RegisterObject(GameObject go) {

@@ -62,7 +62,7 @@ public class Attacker : MonoBehaviour {
             return;
         }
 
-        Debug.Log(parentMob);
+        //Debug.Log(parentMob);
         col.radius = parentMob.info.atkRadius;
 
         targetID = -1;

@@ -6,10 +6,10 @@ using TMPro;
 public class CardItem
 {
     public CardItemType cardItemType;
-    public int amount;
+    public int CardLevel;
     public string name;
     public float temperature;
     public float pressure;
     public string description;
-
+    public int cost;
 }

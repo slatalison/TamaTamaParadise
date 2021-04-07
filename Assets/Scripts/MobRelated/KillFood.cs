@@ -14,12 +14,12 @@ public class KillFood : MonoBehaviour
     {
         if (fm == null)
         {
-            fm = GameObject.Find("Canvas/TopBar/FundBackdrop/fundValue").GetComponent<FundManager>();
+            fm = GameObject.Find("_GameCanvas/_TopBar/_FundBackdrop/_fundValue").GetComponent<FundManager>();
         }
 
         if (lm == null)
         {
-            lm = GameObject.Find("Canvas/TopBar/LevelBackdrop/LevelNum").GetComponent<LevelManager>();
+            lm = GameObject.Find("_GameCanvas/_TopBar/_LevelBackdrop/_LevelNum").GetComponent<LevelManager>();
         }
     }
 

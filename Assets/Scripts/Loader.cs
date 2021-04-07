@@ -11,8 +11,10 @@ public class Loader : MonoBehaviour
     {
         Breed br;
         string jsonString = "{}";
-        foreach (string path in Directory.GetFiles("./Assets/Resources/Breed")) {
-            if (Path.GetExtension(path) == ".json") {
+        foreach (string path in Directory.GetFiles("./Assets/Resources/Breed"))
+        {
+            if (Path.GetExtension(path) == ".json")
+            {
                 jsonString = File.ReadAllText(path);
                 br = JsonUtility.FromJson<Breed>(jsonString);
                 Breed.breedCollection[br.breedID] = br;
@@ -22,6 +24,18 @@ public class Loader : MonoBehaviour
         //此处照抄 load achievement
         //Achievement.allAchievements
 
+        Achievement ach;
+        string achJsonString = "{}";
+        foreach (string path in Directory.GetFiles("./Assets/Resources/Achievement"))
+        {
+            if (Path.GetExtension(path) == ".json")
+            {
+                achJsonString = File.ReadAllText(path);
+                ach = JsonUtility.FromJson<Achievement>(achJsonString);
+                Achievement.allAchievements[ach.id] = ach;
+            }
+        }
+
         // CollectionDetail(int _id, Sprite _icon, string _name, string _description)
         // new CollectionDetail(1, null, "Passed away", "A mob is beaten to death.");
         // new CollectionDetail(3, null, "Astronomia", "Ghana's dancing pallbearers.");
@@ -30,7 +44,8 @@ public class Loader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (InitTamaSpawn == true) {
+        if (InitTamaSpawn == true)
+        {
             InitTamaSpawn = false;
             for (int i = 0; i < 10; i++)
             {

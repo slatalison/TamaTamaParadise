@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Food : MonoBehaviour {
-    public float vanishingTime;
+    //public float vanishingTime;
     public float movingSpeed;
     public int healingValue;
 
@@ -23,12 +23,12 @@ public class Food : MonoBehaviour {
     void Start() {
 
         if (fm == null) {
-            fm = GameObject.Find("Canvas/TopBar/FundBackdrop/fundValue").GetComponent<FundManager>();
+            fm = GameObject.Find("_GameCanvas/_TopBar/_FundBackdrop/_fundValue").GetComponent<FundManager>();
         }
 
         if(lm == null)
         {
-            lm = GameObject.Find("Canvas/TopBar/LevelBackdrop/LevelNum").GetComponent<LevelManager>();
+            lm = GameObject.Find("_GameCanvas/_TopBar/_LevelBackdrop/_LevelNum").GetComponent<LevelManager>();
         }
 
         StartCoroutine(Cooldown());
@@ -39,7 +39,7 @@ public class Food : MonoBehaviour {
         rig.AddForce(Random.insideUnitCircle * movingSpeed);
 
         eaters = new List<Mob>();
-        Destroy(gameObject, vanishingTime);
+        //Destroy(gameObject, vanishingTime);
     }
 
     // Update is called once per frame

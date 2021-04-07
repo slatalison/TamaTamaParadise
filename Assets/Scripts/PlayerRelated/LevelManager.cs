@@ -13,32 +13,42 @@ public class LevelManager : MonoBehaviour
     public Image expBarImage;
     public int[] levelUpThreshold = { 100, 200, 300, 400, 500 };
     //public int[] levelUpDelta = { 100, 100, 100, 100, 100 };
+    public GameObject levelUpPanel;
+    private AudioSource _audio;
+    [SerializeField] AudioClip levelUpSound;
 
     void Start()
     {
         playerLevelText = gameObject.GetComponent<TextMeshProUGUI>();
-        expBarImage = GameObject.Find("Canvas/TopBar/LevelBackdrop/expBar").GetComponent<Image>();
+        expBarImage = GameObject.Find("_GameCanvas/_TopBar/_LevelBackdrop/_expBar").GetComponent<Image>();
         playerLevelText.SetText("1");
-        //expBarImage.fillAmount = 0;
+        expBarImage.fillAmount = 0;
+        _audio = gameObject.GetComponent<AudioSource>();
     }
 
     public void PlayerLevelUp()
     {
-        playerLevelNumber ++ ;
-        playerLevelText.SetText((playerLevelNumber + 1).ToString());
+        if (playerLevelNumber < levelUpThreshold.Length) {
+            playerLevelNumber++;
+            _audio.PlayOneShot(levelUpSound);
+            levelUpPanel.SetActive(true);
+            playerLevelText.SetText((playerLevelNumber + 1).ToString());
+        }
     }
 
     public void PlayerExpGrow(int amount)
     {
         playerExp += amount;
-        expBarImage.fillAmount = (float)GetExpDelta(playerExp) / (float)GetLevelUpDelta(playerLevelNumber);
+        expBarImage.fillAmount += (float)GetExpDelta(amount) / (float)GetLevelUpDelta(playerLevelNumber);
+        //Debug.Log(amount + " " + playerExp);
     }
+
 
     public int GetLevelUpDelta(int playerLevelNumber)
     {
         if (playerLevelNumber > 0)
         {
-            return (levelUpThreshold[playerLevelNumber] - levelUpThreshold[playerLevelNumber]);
+            return (levelUpThreshold[playerLevelNumber] - levelUpThreshold[playerLevelNumber - 1]);
         }else
         {
             return levelUpThreshold[playerLevelNumber];
@@ -46,17 +56,21 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    public int GetExpDelta(int playerExp)
+    public int GetExpDelta(int amount)
     {
-        if (playerExp > levelUpThreshold[0])
+       if (playerExp >= levelUpThreshold[levelUpThreshold.Length - 1])
         {
-            return (playerExp - levelUpThreshold[playerLevelNumber]);
-        }
-        else
+            return 0;
+        } else
         {
-            return playerExp;
+            return amount;
         }
 
+    }
+
+    public void DisablePanel()
+    {
+        levelUpPanel.SetActive(false);
     }
 
     void Update()

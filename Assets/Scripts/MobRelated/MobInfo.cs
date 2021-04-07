@@ -5,7 +5,7 @@ public class MobInfo {
     public static Sprite redTexture = Resources.Load<Sprite>("TamasPrefab/TamaR");
     public static Sprite blueTexture = Resources.Load<Sprite>("TamasPrefab/TamaB");
     public static Sprite neutralTexture = Resources.Load<Sprite>("NeutralMob");
-    public static Sprite deadTexture = Resources.Load<Sprite>("DeadMob");
+    public static Sprite deadTexture = Resources.Load<Sprite>("TamasPrefab/TamaDead");
 
     public Breed breed;
     
