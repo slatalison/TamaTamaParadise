@@ -6,7 +6,7 @@ public class Attacker : MonoBehaviour {
     public int targetID;
     public float attackFrequency;
 
-    private Mob parentMob;
+    public Mob parentMob;
     private CircleCollider2D col;
 
     private Coroutine attackTimer;

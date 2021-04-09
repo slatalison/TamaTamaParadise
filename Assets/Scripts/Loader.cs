@@ -53,7 +53,7 @@ public class Loader : MonoBehaviour
                                        Random.Range(-2.9f, 3.4f), 0);
                 int random_number = Random.Range(1, Breed.breedCollection.Count + 1);
                 Breed breed = Breed.breedCollection[random_number];
-                new CreateCreatureCommand(location, breed, (Team)((i % 2) + 1)).AddToQueue();
+                new CreateCreatureCommand(location, breed, (Team)(i % 2) + 1).AddToQueue();
             }
         }
     }

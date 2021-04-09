@@ -7,11 +7,15 @@ public class KillFood : MonoBehaviour
 
     public static FundManager fm = null;
     public static LevelManager lm = null;
+    private AudioSource _audio;
+    public AudioClip collectSound;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        _audio = gameObject.GetComponent<AudioSource>();
+
         if (fm == null)
         {
             fm = GameObject.Find("_GameCanvas/_TopBar/_FundBackdrop/_fundValue").GetComponent<FundManager>();
@@ -34,6 +38,17 @@ public class KillFood : MonoBehaviour
             }
             fm.Increase(food.healingValue);
             lm.PlayerExpGrow(food.healingValue);
+            _audio.PlayOneShot(collectSound);
+            Destroy(other.gameObject);
+        } else if (other.CompareTag("bullet"))
+        {
+            Attacker bullet = other.GetComponent<Attacker>();
+            if (bullet == null)
+            {
+                return;
+            }
+            fm.Increase(bullet.parentMob.info.atk);
+            lm.PlayerExpGrow(bullet.parentMob.info.atk);
             Destroy(other.gameObject);
         }
     }
