@@ -108,6 +108,7 @@
     <Compile Include="Assets\Scripts\UI&amp;Visual\LoadingScenes.cs" />
     <Compile Include="Assets\Scripts\UI&amp;Visual\PDControl.cs" />
     <Compile Include="Assets\Scripts\UI&amp;Visual\PanelInteraction.cs" />
+    <Compile Include="Assets\Scripts\UI&amp;Visual\SessionWorking.cs" />
     <Compile Include="Assets\Scripts\UI&amp;Visual\TabGroup.cs" />
     <Compile Include="Assets\Scripts\UI&amp;Visual\TabItem.cs" />
     <Compile Include="Assets\Scripts\UI&amp;Visual\TamaCollectionCell.cs" />

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Loader : MonoBehaviour
 {
     public bool InitTamaSpawn = false;
+    public int InitTamaNumber = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +48,7 @@ public class Loader : MonoBehaviour
         if (InitTamaSpawn == true)
         {
             InitTamaSpawn = false;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < InitTamaNumber; i++)
             {
                 Vector3 location = new Vector3(Random.Range(-1.95f, 1.95f),
                                        Random.Range(-2.9f, 3.4f), 0);

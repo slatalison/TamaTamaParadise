@@ -72,6 +72,9 @@ public class Mob : MonoBehaviour {
 
     public void TakeDamage(int value) {
         info.currHp -= value;
+        //掉血的时候降低贴图透明度
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, (float)info.currHp / info.maxHp);
+        Debug.Log((float)info.currHp / info.maxHp);
         if (info.currHp <= 0 && dead == false) {
             dead = true;
             Die();
@@ -81,6 +84,8 @@ public class Mob : MonoBehaviour {
     public void Heal(int value, Team _team) {
         if (info.currHp < info.maxHp) {
             info.currHp += value;
+            //加血的时候增加贴图透明度
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, (float)info.currHp/info.maxHp);
         }
         info.currHp = info.currHp < info.maxHp ? info.currHp : info.maxHp;
         if (team == Team.Neutral) {
@@ -114,7 +119,7 @@ public class Mob : MonoBehaviour {
         ContainerEnv.tempPresChange -= EnvironmentChanged;
 
         gameObject.GetComponent<SpriteRenderer>().sprite = MobInfo.deadTexture;
-
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
 
         Collection.UnlockEvent(1);
 

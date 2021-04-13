@@ -38,7 +38,7 @@ public class ContainerEnv : MonoBehaviour {
             tempGauge.text = "Unconcerned";
         }else if(CurrentTemp >= 25f && CurrentTemp < 50f)
         {
-            tempGauge.text = "Niche";
+            tempGauge.text = "Niche-picked";
         }else if(CurrentTemp >= 50f && CurrentTemp < 75f)
         {
             tempGauge.text = "Devoted";
@@ -61,7 +61,7 @@ public class ContainerEnv : MonoBehaviour {
         }
         else if (CurrentPres <= 100f)
         {
-            presGauge.text = "Terror";
+            presGauge.text = "Silenced";
         }
     }
 
